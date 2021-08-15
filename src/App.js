@@ -1,5 +1,6 @@
 import React from "react";
 import Clock from "./Clock";
+import Timer from "./Timer";
 
 class App extends React.Component {
   render() {
@@ -7,6 +8,7 @@ class App extends React.Component {
       <div>
         <h1>Stop Sitting</h1>
         <Clock />
+        <Timer />
       </div>
     );
   }
