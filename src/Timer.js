@@ -11,12 +11,12 @@ class Timer extends React.Component {
 
   render() {
     return (
-      <div>
+      <>
         <button onClick={this.handleTimer}>
           {this.state.startTimer ? "Stop Timer" : "Start Timer"}
         </button>
         {this.state.startTimer && <h1>{this.state.time}</h1>}
-      </div>
+      </>
     );
   }
 
@@ -28,7 +28,7 @@ class Timer extends React.Component {
           this.timerID = setInterval(() => this.tick(), 1000);
         } else {
           clearInterval(this.timerID);
-          this.setState(() => ({ time: 0 }));
+          this.setState({ time: 0 });
         }
       }
     );
