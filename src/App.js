@@ -1,7 +1,7 @@
 import React from "react";
 import Greeting from "./Greeting";
 import Clock from "./Clock";
-import Timer from "./Timer";
+import StopSittingPanel from "./StopSittingPanel";
 
 class App extends React.Component {
   render() {
@@ -9,9 +9,7 @@ class App extends React.Component {
       <>
         <Greeting name="George" />
         <Clock />
-        <button>Settings</button>
-        <button>Start Sitting</button>
-        <Timer />
+        <StopSittingPanel />
       </>
     );
   }
