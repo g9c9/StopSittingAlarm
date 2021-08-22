@@ -11,7 +11,7 @@ class App extends React.Component {
         <Clock />
         <button>Settings</button>
         <button>Start Sitting</button>
-        <h1>00:01:23</h1>
+        <Timer />
       </>
     );
   }
