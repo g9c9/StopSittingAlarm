@@ -9,7 +9,9 @@ class App extends React.Component {
       <>
         <Greeting name="George" />
         <Clock />
-        <Timer />
+        <button>Settings</button>
+        <button>Start Sitting</button>
+        <h1>00:01:23</h1>
       </>
     );
   }
