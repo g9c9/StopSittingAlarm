@@ -3,30 +3,30 @@ import { useState, useEffect } from "react";
 function useTimer(timeLimit, timeUp) {
   const [sec, setSec] = useState(0);
   const [min, setMin] = useState(0);
-  const [timerID, setTimerID] = useState(null);
   const [startTimer, setStartTimer] = useState(false);
 
   useEffect(() => {
+    let id = null;
     if (startTimer) {
-      setTimerID(
-        setInterval(() => {
-          if (sec < 59) {
-            setSec(sec + 1);
+      id = setInterval(() => {
+        setSec((s) => {
+          if (s < 59) {
+            return s + 1;
           } else {
-            setMin(min + 1);
-            setSec(0);
+            setMin((m) => m + 1);
+            return 0;
           }
-        })
-      );
+        });
+      });
     } else {
-      clearInterval(timerID);
+      id && clearInterval(id);
       setSec(0);
       setMin(0);
     }
     return () => {
-      clearInterval(timerID);
+      id && clearInterval(id);
     };
-  }, [startTimer, min, sec, timerID]);
+  }, [startTimer]);
 
   useEffect(() => {
     if (min === timeLimit) {
