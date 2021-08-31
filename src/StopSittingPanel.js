@@ -1,14 +1,23 @@
 import React, { useState } from "react";
-import Timer from "./Timer";
+import SittingPanel from "./SittingPanel";
+import BreakPanel from "./BeakPanel";
+import SettingsPanel from "./SettingsPanel";
 
 function StopSittingPanel() {
   const [showSettings, setShowSettings] = useState(false);
+  const [stopSitting, setStopSitting] = useState(false);
+  const [sittingTime, setSittingTime] = useState(30);
+  const [breakTime, setBreakTime] = useState(5);
 
   return (
     <>
       <button>Settings</button>
-      <button>Start Sitting</button>
-      <Timer />
+      {stopSitting ? (
+        <BreakPanel time={breakTime} />
+      ) : (
+        <SittingPanel time={sittingTime} />
+      )}
+      {showSettings && <SettingsPanel />}
     </>
   );
 }
