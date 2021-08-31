@@ -39,7 +39,7 @@ function useTimer(timeLimit) {
     setStartTimer(!startTimer);
   }
 
-  return [min, sec, timeUp, toggleTimer];
+  return [min, sec, startTimer, timeUp, toggleTimer];
 }
 
 export default useTimer;
