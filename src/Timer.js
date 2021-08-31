@@ -6,7 +6,7 @@ function useTimer(timeLimit, timeUp) {
   const [startTimer, setStartTimer] = useState(false);
 
   useEffect(() => {
-    let id = null;
+    let id = 0;
     if (startTimer) {
       id = setInterval(() => {
         setSec((s) => {
@@ -19,12 +19,12 @@ function useTimer(timeLimit, timeUp) {
         });
       });
     } else {
-      id && clearInterval(id);
+      clearInterval(id);
       setSec(0);
       setMin(0);
     }
     return () => {
-      id && clearInterval(id);
+      clearInterval(id);
     };
   }, [startTimer]);
 
