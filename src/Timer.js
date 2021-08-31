@@ -26,7 +26,7 @@ function useTimer(timeLimit, timeUp) {
     return () => {
       clearInterval(timerID);
     };
-  }, [startTimer]);
+  }, [startTimer, min, sec, timerID]);
 
   useEffect(() => {
     if (min === timeLimit) {
