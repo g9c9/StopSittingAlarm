@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 
-function useTimer(timeLimit) {
+function useTimer(timeLimit, timeUp) {
   const [sec, setSec] = useState(0);
   const [min, setMin] = useState(0);
-  const [timeUp, setTimeUp] = useState(false);
   const [timerID, setTimerID] = useState(null);
   const [startTimer, setStartTimer] = useState(false);
 
@@ -31,15 +30,16 @@ function useTimer(timeLimit) {
 
   useEffect(() => {
     if (min === timeLimit) {
-      setTimeUp(true);
+      timeUp();
+      setStartTimer(false);
     }
-  }, [min, timeLimit]);
+  }, [min, timeLimit, timeUp]);
 
   function toggleTimer() {
     setStartTimer(!startTimer);
   }
 
-  return [min, sec, startTimer, timeUp, toggleTimer];
+  return [min, sec, startTimer, toggleTimer];
 }
 
 export default useTimer;
