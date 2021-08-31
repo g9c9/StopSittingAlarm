@@ -11,7 +11,7 @@ function StopSittingPanel() {
 
   return (
     <>
-      <button>Settings</button>
+      <button onClick={() => setShowSettings(!showSettings)}>Settings</button>
       {stopSitting ? (
         <BreakPanel time={breakTime} />
       ) : (
