@@ -5,12 +5,24 @@ function SettingsPanel(props) {
       <form>
         <label>
           Sitting Time
-          <input type="number" value={props.sittingTime} />
+          <input
+            type="number"
+            value={props.sittingTime}
+            onChange={(e) => {
+              if (e.target.value >= 0) props.setSittingTime(e.target.value);
+            }}
+          />
         </label>
         <br />
         <label>
           Break Time
-          <input type="number" value={props.breakTime} />
+          <input
+            type="number"
+            value={props.breakTime}
+            onChange={(e) => {
+              if (e.target.value >= 0) props.setBreakTime(e.target.value);
+            }}
+          />
         </label>
       </form>
     </>
