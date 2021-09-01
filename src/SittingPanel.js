@@ -1,9 +1,16 @@
+import useTimer from "./Timer";
 function SittingPanel(props) {
+  const [min, sec, startTimer, toggleTimer] = useTimer(
+    props.time,
+    props.timeUp
+  );
+
   return (
     <>
       <button>Start Sitting</button>
-      <p>{props.time}</p>
-      <h1>00:01:23</h1>
+      <h1>
+        {min < 10 ? "0" + min : min}:{sec < 10 ? "0" + sec : sec}
+      </h1>
     </>
   );
 }
