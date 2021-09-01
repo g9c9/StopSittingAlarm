@@ -17,7 +17,9 @@ function StopSittingPanel() {
       ) : (
         <SittingPanel time={sittingTime} timeUp={() => setStopSitting(true)} />
       )}
-      {showSettings && <SettingsPanel />}
+      {showSettings && (
+        <SettingsPanel sittingTime={sittingTime} breakTime={breakTime} />
+      )}
     </>
   );
 }

@@ -3,9 +3,15 @@ function SettingsPanel(props) {
     <>
       <h1>Settings Panel</h1>
       <form>
-        <label>Sitting Time</label>
+        <label>
+          Sitting Time
+          <input type="number" value={props.sittingTime} />
+        </label>
         <br />
-        <label>Break Time</label>
+        <label>
+          Break Time
+          <input type="number" value={props.breakTime} />
+        </label>
       </form>
     </>
   );
