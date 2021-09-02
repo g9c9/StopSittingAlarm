@@ -9,7 +9,7 @@ function BreakPanel(props) {
     return () => {
       toggleTimer();
     };
-  }, []);
+  }, [toggleTimer]);
 
   return (
     <>
