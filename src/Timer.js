@@ -29,7 +29,7 @@ function useTimer(timeLimit, timeUp) {
   }, [startTimer]);
 
   useEffect(() => {
-    if (min === timeLimit) {
+    if (min >= timeLimit) {
       timeUp();
       setStartTimer(false);
     }
