@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import SittingPanel from "./SittingPanel";
-import BreakPanel from "./BeakPanel";
+import BreakPanel from "./BreakPanel";
 import SettingsPanel from "./SettingsPanel";
 
 function StopSittingPanel() {
