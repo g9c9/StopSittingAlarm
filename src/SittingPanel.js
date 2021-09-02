@@ -7,7 +7,9 @@ function SittingPanel(props) {
 
   return (
     <>
-      <button>Start Sitting</button>
+      <button onClick={toggleTimer}>
+        {startTimer ? "Stop Sitting" : "Start Sitting"}
+      </button>
       <h1>
         {min < 10 ? "0" + min : min}:{sec < 10 ? "0" + sec : sec}
       </h1>
