@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 
-function useTimer(timeLimit, timeUp) {
+function useTimer(timeLimit, timeUp, start) {
   const [sec, setSec] = useState(0);
   const [min, setMin] = useState(0);
-  const [startTimer, setStartTimer] = useState(false);
+  const [startTimer, setStartTimer] = useState(start);
 
   useEffect(() => {
     let id = 0;

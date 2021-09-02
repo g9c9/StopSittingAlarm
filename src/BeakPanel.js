@@ -1,15 +1,7 @@
-import React, { useEffect } from "react";
 import useTimer from "./Timer";
 
 function BreakPanel(props) {
-  const [min, sec, , toggleTimer] = useTimer(props.time, props.timeUp);
-
-  useEffect(() => {
-    toggleTimer();
-    return () => {
-      toggleTimer();
-    };
-  }, [toggleTimer]);
+  const [min, sec, ,] = useTimer(props.time, props.timeUp, true);
 
   return (
     <>
