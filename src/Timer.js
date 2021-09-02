@@ -17,7 +17,7 @@ function useTimer(timeLimit, timeUp) {
             return 0;
           }
         });
-      });
+      }, 1000);
     } else {
       clearInterval(id);
       setSec(0);
