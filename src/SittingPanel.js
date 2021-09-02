@@ -1,4 +1,5 @@
 import useTimer from "./Timer";
+
 function SittingPanel(props) {
   const [min, sec, startTimer, toggleTimer] = useTimer(
     props.time,
