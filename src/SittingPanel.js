@@ -7,9 +7,14 @@ function SittingPanel(props) {
     false
   );
 
+  function handleClick(e) {
+    props.setShowSettings(false);
+    toggleTimer();
+  }
+
   return (
     <>
-      <button onClick={toggleTimer}>
+      <button onClick={handleClick}>
         {startTimer ? "Stop Sitting" : "Start Sitting"}
       </button>
       <h1>
