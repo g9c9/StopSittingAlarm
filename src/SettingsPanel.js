@@ -24,6 +24,8 @@ function SettingsPanel(props) {
             }}
           />
         </label>
+        <br />
+        <input type="button" value="Enable Notifications" />
       </form>
     </>
   );

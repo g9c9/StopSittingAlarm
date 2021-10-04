@@ -7,7 +7,7 @@ function SittingPanel(props) {
     false
   );
 
-  function handleClick(e) {
+  function handleClick() {
     props.setShowSettings(false);
     toggleTimer();
   }
