@@ -24,9 +24,14 @@ function SettingsPanel(props) {
             }}
           />
         </label>
-        <br />
-        <input type="button" value="Enable Notifications" />
       </form>
+      <button
+        onClick={() => {
+          props.setEnableNotif(!props.enableNotif);
+        }}
+      >
+        {props.enableNotif ? "Disable Notifications" : "Enable Notifications"}
+      </button>
     </>
   );
 }

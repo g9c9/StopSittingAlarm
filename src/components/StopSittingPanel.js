@@ -3,7 +3,7 @@ import SittingPanel from "./SittingPanel";
 import BreakPanel from "./BreakPanel";
 import SettingsPanel from "./SettingsPanel";
 
-function StopSittingPanel() {
+function StopSittingPanel(props) {
   const [showSettings, setShowSettings] = useState(false);
   const [stopSitting, setStopSitting] = useState(false);
   const [sittingTime, setSittingTime] = useState(30);
@@ -27,6 +27,8 @@ function StopSittingPanel() {
           breakTime={breakTime}
           setSittingTime={setSittingTime}
           setBreakTime={setBreakTime}
+          enableNotif={props.enableNotif}
+          setEnableNotif={props.setEnableNotif}
         />
       )}
     </>

@@ -11,14 +11,14 @@ ReactDOM.render(<App />, document.getElementById("root"));
 // Learn more about service workers: https://cra.link/PWA
 serviceWorkerRegistration.register();
 
-(async function () {
-  // Asking user for notification permission
-  await Notification.requestPermission();
+// (async function () {
+//   // Asking user for notification permission
+//   await Notification.requestPermission();
 
-  // Send greeting if permisison is granted
-  if (Notification.permission === "granted") {
-    const greeting = new Notification("Hi, How are you?");
-    //Close greeting in 5 seconds
-    setTimeout(() => greeting.close(), 5 * 1000);
-  }
-})();
+//   // Send greeting if permisison is granted
+//   if (Notification.permission === "granted") {
+//     const greeting = new Notification("Hi, How are you?");
+//     //Close greeting in 5 seconds
+//     setTimeout(() => greeting.close(), 5 * 1000);
+//   }
+// })();
