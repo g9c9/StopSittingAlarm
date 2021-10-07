@@ -13,11 +13,26 @@ function StopSittingPanel(props) {
     <>
       <button onClick={() => setShowSettings(!showSettings)}>Settings</button>
       {stopSitting ? (
-        <BreakPanel time={breakTime} timeUp={() => setStopSitting(false)} />
+        <BreakPanel
+          time={breakTime}
+          timeUp={() => {
+            setStopSitting(false);
+            if (props.enableNotif) {
+              const notif = new Notification("Break is over!");
+              setTimeout(() => notif.close(), 10 * 1000);
+            }
+          }}
+        />
       ) : (
         <SittingPanel
           time={sittingTime}
-          timeUp={() => setStopSitting(true)}
+          timeUp={() => {
+            setStopSitting(true);
+            if (props.enableNotif) {
+              const notif = new Notification("Stop Sitting!");
+              setTimeout(() => notif.close(), 10 * 1000);
+            }
+          }}
           setShowSettings={setShowSettings}
         />
       )}
