@@ -1,24 +1,17 @@
-import useTimer from "./Timer";
-
 function SittingPanel(props) {
-  const [min, sec, startTimer, toggleTimer] = useTimer(
-    props.time,
-    props.timeUp,
-    false
-  );
-
   function handleClick() {
     props.setShowSettings(false);
-    toggleTimer();
+    props.toggleTimer();
   }
 
   return (
     <>
       <button onClick={handleClick}>
-        {startTimer ? "Stop Sitting" : "Start Sitting"}
+        {props.startTimer ? "Stop Sitting" : "Start Sitting"}
       </button>
       <h1>
-        {min < 10 ? "0" + min : min}:{sec < 10 ? "0" + sec : sec}
+        {props.min < 10 ? "0" + props.min : props.min}:
+        {props.sec < 10 ? "0" + props.sec : props.sec}
       </h1>
     </>
   );
